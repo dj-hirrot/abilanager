@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  socket: /tmp/mysql.sock
+development:
+  <<: *default
+  database: abilanager_development
+test:
+  <<: *default
+  database: abilanager_test
+production:
+  <<: *default
+  database: abilanager_production
+  username: abilanager
+  password: <%= ENV['ABILANAGER_DATABASE_PASSWORD'] %>
