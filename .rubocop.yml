@@ -4,9 +4,25 @@ require:
 AllCops:
   TargetRubyVersion: 2.6
   Exclude:
-    - 'config.ru'
-    - 'bin/**'
-    - 'lib/**'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'node_modules/**/*'
+    - config.ru
+    - bin/**
+    - spec/**/*
+    - lib/**
+    - db/**/*
+    - config/**/*
+    - node_modules/**/*
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
