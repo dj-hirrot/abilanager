@@ -14,6 +14,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.8'
   gem 'spring-commands-rspec'
   gem 'rubocop-rails'
