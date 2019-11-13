@@ -13,6 +13,10 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Front FW
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
