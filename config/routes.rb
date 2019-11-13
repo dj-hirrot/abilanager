@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     end
   end
   root 'home#top'
+  match '*path' => 'home#top', via: [:get]
 end
