@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
