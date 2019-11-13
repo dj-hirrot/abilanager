@@ -1,17 +1,21 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
-  before_action :configure_account_update_params, only: [:update]
-
   # GET /resource/sign_up
   def new
-    super
+    @user = User.new
   end
 
   # POST /resource
   def create
-    super
+    @user = User.new(user_params)
+    if @user.save
+      set_flash_message! :notice, :signed_up
+      redirect_to root_path # FIXME: 一時的な遷移先
+    else
+      flash.now[:alert] = '入力に誤りがあります'
+      render :new
+    end
   end
 
   # GET /resource/edit
@@ -40,12 +44,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: param_items)
-  end
-
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: param_items)
+  def user_params
+    params.require(:user).permit(param_items)
   end
 
   def param_items
@@ -53,6 +53,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :name, :email, :password, :password_confirmation
     ]
   end
+
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
   #   super(resource)
