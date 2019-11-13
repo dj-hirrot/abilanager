@@ -17,6 +17,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
+# User activate
+gem 'devise'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
