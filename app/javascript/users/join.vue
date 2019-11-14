@@ -1,11 +1,13 @@
 <template>
-  <form @submit.prevent="registUser">
-    <div v-if="errors.length > 0">
-      <ul v-for="e in errors" :key="e">
-        <li>{{ e }}</li>
-      </ul>
-    </div>
-  </form>
+  <div id="app">
+    <form @submit.prevent="registUser">
+      <div v-if="errors.length > 0">
+        <ul v-for="e in errors" :key="e">
+          <li>{{ e }}</li>
+        </ul>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
